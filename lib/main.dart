@@ -9,8 +9,10 @@ class WhatsAppClone extends StatelessWidget {
     return MaterialApp(
       title: 'WhatsAppClone',
       theme: ThemeData(
+        fontFamily: 'Roboto',
         primaryColor: Color(0xFF075E54),
         accentColor: Color(0xFF128C7E),
+        scaffoldBackgroundColor: Color(0xFFECE5DD),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(),

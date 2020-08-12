@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'body.dart';
 import 'components/custom_bottom.dart';
+import 'components/profile.dart';
+import 'model/user.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,8 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'WhatsApp Clone',
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Profile(
+              height: 38,
+              hasBorder: false,
+              imageSource: myUsers[8].avatar,
+            ),
+            Text('WhatsApp Clone'),
+          ],
         ),
         actions: [
           IconButton(

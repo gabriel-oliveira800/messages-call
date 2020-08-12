@@ -2,32 +2,28 @@ import 'package:flutter/material.dart';
 
 import 'components/status_item.dart';
 import 'model/status.dart';
+import 'model/user.dart';
 
-class Status extends StatefulWidget {
-  @override
-  _StatusState createState() => _StatusState();
-}
-
-class _StatusState extends State<Status> {
-  final List<StatusModel> status = [
-    StatusModel(),
-    StatusModel(),
-    StatusModel(),
-    StatusModel(),
-  ];
-
+class Status extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Container(
-      color: Colors.red,
-      height: size.height * 0.3,
-      child: ListView.builder(
-        itemCount: status.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index) {
-          return StatusItem(status: status[index]);
-        },
+    return SizedBox(
+      height: size.height * 0.35,
+      child: Card(
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        color: Colors.white,
+        child: ListView.builder(
+          itemCount: myStatus.length + 1,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, index) {
+            if (index == 0)
+              return StatusItem(status: null, currentUser: myUsers[8]);
+
+            return StatusItem(status: myStatus[index - 1]);
+          },
+        ),
       ),
     );
   }

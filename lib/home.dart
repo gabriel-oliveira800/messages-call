@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'body.dart';
+import 'calls.dart';
+import 'chat_messages.dart';
 import 'components/custom_bottom.dart';
 import 'components/profile.dart';
+import 'constants.dart';
 import 'model/message.dart';
 import 'model/user.dart';
 
@@ -14,11 +16,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 0;
   int totalMessages = 0;
+  PageController controller;
 
-  void changePage(int page) {
+  @override
+  void initState() {
+    super.initState();
+    initTotalMessages();
+    controller = PageController(initialPage: 0);
+  }
+
+  void jumToPage(int page) {
     setState(() {
       currentPage = page;
     });
+    controller.animateToPage(
+      currentPage,
+      curve: Curves.easeOut,
+      duration: Duration(milliseconds: 300),
+    );
   }
 
   void initTotalMessages() {
@@ -29,12 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
         .map((item) => item.countMessage)
         .toList()
         .reduce((value, element) => value += element);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    initTotalMessages();
   }
 
   @override
@@ -63,10 +72,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Body(),
+      body: PageView(
+        controller: controller,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          ChatMessages(),
+          CallsMessages(),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: lightGreen,
+        onPressed: () => print('add message'),
+        child: Icon(currentPage == 0 ? Icons.message : Icons.add_call),
+      ),
       bottomNavigationBar: CustomBottom(
         selected: currentPage,
-        onPressed: changePage,
+        onPressed: jumToPage,
         totalMessage: totalMessages,
       ),
     );

@@ -3,7 +3,7 @@ import 'components/message_item.dart';
 import 'model/message.dart';
 import 'status.dart';
 
-class Body extends StatelessWidget {
+class ChatMessages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

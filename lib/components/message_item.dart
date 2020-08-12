@@ -1,65 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/model/message.dart';
-import 'package:whatsapp_clone/model/user.dart';
 
+import 'message_footer.dart';
+import 'message_item_content.dart';
 import 'profile.dart';
 
 class MessageItem extends StatelessWidget {
   final Message message;
-  const MessageItem({
-    Key key,
-    @required this.message,
-  }) : super(key: key);
+  const MessageItem({Key key, @required this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       width: double.infinity,
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Profile(
-            height: 62,
-            hasBorder: false,
-            imageSource: myUsers[6].avatar,
-          ),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    myUsers[0].name,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    '${myUsers[0].number}: Hello, whats to name ?',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const Divider()
-                ],
+          Flexible(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 6),
+              child: Profile(
+                height: 62,
+                hasBorder: false,
+                imageSource: message.user.avatar,
               ),
             ),
           ),
-          Container(
-            height: 80,
-            color: Colors.red,
-            child: Text(
-              '12:00',
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 12),
+          Flexible(
+            flex: 6,
+            child: MessageItemContent(message: message),
+          ),
+          Flexible(
+            flex: 1,
+            child: Footer(
+              hours: message.hours,
+              countMessage: message.countMessage,
             ),
           ),
         ],
       ),
-      padding: const EdgeInsets.only(left: 6),
     );
   }
 }

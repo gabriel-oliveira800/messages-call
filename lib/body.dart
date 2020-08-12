@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'components/message_item.dart';
+import 'model/message.dart';
 import 'status.dart';
 
 class Body extends StatelessWidget {
@@ -16,11 +17,11 @@ class Body extends StatelessWidget {
         SliverPadding(
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
-              (_, index) => MessageItem(message: null),
-              childCount: 25,
+              (_, index) => MessageItem(message: myMessages[index]),
+              childCount: myMessages.length,
             ),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 18),
         )
       ],
     );

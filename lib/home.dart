@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'body.dart';
 import 'components/custom_bottom.dart';
 import 'components/profile.dart';
+import 'model/message.dart';
 import 'model/user.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,11 +13,28 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 0;
+  int totalMessages = 0;
 
   void changePage(int page) {
     setState(() {
       currentPage = page;
     });
+  }
+
+  void initTotalMessages() {
+    var allMessages =
+        myMessages.where((item) => item.countMessage != null).toList();
+
+    totalMessages = allMessages
+        .map((item) => item.countMessage)
+        .toList()
+        .reduce((value, element) => value += element);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initTotalMessages();
   }
 
   @override
@@ -49,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: CustomBottom(
         selected: currentPage,
         onPressed: changePage,
+        totalMessage: totalMessages,
       ),
     );
   }

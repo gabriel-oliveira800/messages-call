@@ -2,9 +2,9 @@
 
 Re-creating the whatsapp interface.
 
-<img src="./screenshot/02.jpg" height="150" width="150">
-<img src="./screenshot/02.jpg" height="150" width="150">
-<img src="./screenshot/01.jpg" height="150" width="150">
+<img src="./screenshot/02.jpg" height="150">
+<img src="./screenshot/02.jpg" height="150">
+<img src="./screenshot/01.jpg" height="150">
 
 Execute the commanded ``` flutter doctor ``` at your terminal.
 

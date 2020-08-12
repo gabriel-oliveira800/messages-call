@@ -1,11 +1,10 @@
 # whatsapp_clone
 
 Re-creating the whatsapp interface.
-<!-- 
-![SplashScreen](screenshot/01.jpg)
-![Chat](screenshot/02.jpg)
-![Call](screenshot/03.jpg) -->
-![01]<img src="./screenshot/03.jpg" height="80" width="80">
+
+<img src="./screenshot/02.jpg" height="150" width="150">
+<img src="./screenshot/02.jpg" height="150" width="150">
+<img src="./screenshot/01.jpg" height="150" width="150">
 
 Execute the commanded ``` flutter doctor ``` at your terminal.
 

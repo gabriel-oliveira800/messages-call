@@ -1,6 +1,18 @@
 # whatsapp_clone
 
-A new Flutter project.
+Re-creating the whatsapp interface.
+Execute the commanded ``` flutter doctor ``` at your terminal.
+
+To create a flutter project run the command.
+```
+    flutter create my_app
+    cd my_app
+    flutter run
+```
+
+You can run the command ``` flutter build ``` to build the app.
+
+You can also use the command ``` flutter install ``` to install the app on your emulator.
 
 ## Getting Started
 

@@ -1,4 +1,4 @@
-# Messages and Call App
+# Messages and Call
 
 Re-creating the whatsapp interface.
 

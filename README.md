@@ -1,4 +1,4 @@
-# whatsapp_clone
+# Messages and Call App
 
 Re-creating the whatsapp interface.
 

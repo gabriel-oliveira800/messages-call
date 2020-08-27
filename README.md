@@ -1,8 +1,15 @@
-# Messages and Call
+<h1 align="center">
+  <br>
+   Messages and Call 
+  <br>
+</h1>
 
-Re-creating the whatsapp interface.
+ <h4 align="center">To start using the flutter you can access <a href="https://flutter.dev" target="_blank">Flutter</a>.</h4>
+ <h3>Whatsapp-Clone: recreating the famous whatsapp app.</h3>
 
-<img src="./screenshot/02.jpg" height="550px" padding-left="12px"> <img src="./screenshot/03.jpg" height="550px">
+ <p float="left">
+  <img src="./screenshot/02.jpg" width="100%">
+ </p>
 
 Execute the commanded ``` flutter doctor ``` at your terminal.
 
@@ -16,16 +23,3 @@ To create a flutter project run the command.
 You can run the command ``` flutter build ``` to build the app.
 
 You can also use the command ``` flutter install ``` to install the app on your emulator.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

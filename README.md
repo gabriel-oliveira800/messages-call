@@ -8,7 +8,7 @@
  <h3>Whatsapp-Clone: recreating the famous whatsapp app.</h3>
 
  <p float="left">
-  <img src="./screenshot/02.jpg" width="100%">
+  <img src="screenshot.png" width="100%">
  </p>
 
 Execute the commanded ``` flutter doctor ``` at your terminal.
